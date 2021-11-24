@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Mo/AndroidStudioProjects/SMIS/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/SMIS/app/src/main/res/drawable/home_gradient_maths.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/SMIS/app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/SMIS/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/SMIS/app/src/main/res/layout/app_bar_dashboard.xml" value="0.2" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/SMIS/app/src/main/res/layout/content_dashboard.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/SMIS/app/src/main/res/menu/bottom_navigation.xml" value="0.2" />
       </map>
     </option>
   </component>
