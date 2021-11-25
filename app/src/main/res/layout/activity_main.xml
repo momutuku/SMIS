@@ -9,10 +9,12 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="0dp"
+        android:layout_marginBottom="5dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/banner">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -61,11 +63,11 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <ImageView
+        android:id="@+id/banner"
         android:layout_width="wrap_content"
         android:layout_height="170dp"
-        android:src="@drawable/eschool"
         android:scaleType="centerCrop"
-        android:layout_marginTop="5dp"
+        android:src="@drawable/eschool"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,7 +100,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="200dp"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="15dp"
                     app:cardPreventCornerOverlap="true">
@@ -111,10 +113,17 @@
                         android:minHeight="100dp"
                         android:padding="10dp">
 
-                        <ImageView
+                        <TextView
+                            android:id="@+id/fees_amnt"
                             style="@style/homeCardImage"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
                             android:maxHeight="90dp"
-                            android:src="@drawable/fees" />
+                            android:text="Kshs. 20,000"
+                            android:textFontWeight="900"
+                            android:textSize="18dp" />
+
 
                         <TextView
                             android:id="@+id/feestxt"
@@ -138,7 +147,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="200dp"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="15dp"
                     app:cardPreventCornerOverlap="true">
@@ -151,10 +160,16 @@
                         android:minHeight="100dp"
                         android:padding="10dp">
 
-                        <ImageView
+                        <TextView
+                            android:id="@+id/res_text"
                             style="@style/homeCardImage"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
                             android:maxHeight="90dp"
-                            android:src="@drawable/books" />
+                            android:text="B+"
+                            android:textFontWeight="900"
+                            android:textSize="28sp" />
 
                         <TextView
                             android:id="@+id/textViewSub1Title"
