@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "766745442736",
+    "project_id": "smis-3292b",
+    "storage_bucket": "smis-3292b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766745442736:android:e822fe50a4a859ae317e75",
+        "android_client_info": {
+          "package_name": "com.clientlabs.smis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766745442736-fbtcgbbnh830mlskveuabc5cqm6objo8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGBkJbVgicHLI57_YCokkp3K1i-QvT_ic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766745442736-fbtcgbbnh830mlskveuabc5cqm6objo8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
