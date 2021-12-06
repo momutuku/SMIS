@@ -41,7 +41,7 @@
     <ImageView
         android:id="@+id/banner"
         android:layout_width="wrap_content"
-        android:layout_height="170dp"
+        android:layout_height="200dp"
         android:layout_below="@+id/appBarLayout"
         android:scaleType="centerCrop"
         android:src="@drawable/eschool" />
@@ -68,7 +68,7 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fees_card"
+
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_marginTop="10dp"
@@ -76,6 +76,8 @@
                     app:cardPreventCornerOverlap="true">
 
                     <RelativeLayout
+                        android:clickable="true"
+                        android:id="@+id/fees_card"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/home_gradient_maths"

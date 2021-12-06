@@ -1,27 +1,25 @@
 package com.clientlabs.smis;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.ui.AppBarConfiguration;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.clientlabs.smis.databinding.ActivityMainBinding;
@@ -30,34 +28,36 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.appcheck.FirebaseAppCheck;
 import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory;
-import com.google.firebase.appcheck.safetynet.SafetyNetAppCheckProviderFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "TAG";
     Toolbar toolbar;
     BottomNavigationView bottomNavigationView;
     DrawerLayout drawer;
     NavigationView navigationView;
-    private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
     ImageView hum, notification;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+    CardView results_card, assignment_card, calender_card;
+    RelativeLayout fee_card;
+    private AppBarConfiguration mAppBarConfiguration;
+    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
             switch (item.getItemId()) {
-                case R.id.navigationMyCourses:
+                case R.id.navigationfees:
+                    Log.d(TAG, "onNavigationItemSelected: Clicked");
+                    Intent fee_page = new Intent(MainActivity.this, Fees.class);
+                    startActivity(fee_page);
+                    Animatoo.animateSlideLeft(MainActivity.this);
+                    return true;
                 case R.id.navigationHome:
                     return true;
-                case R.id.navigationSearch:
+                case R.id.navigationResults:
                     return true;
-//                case R.id.navigationMenu:
-//                    DrawerLayout drawer = findViewById(R.id.drawer_layout);
-//                    drawer.openDrawer(GravityCompat.START);
-//                    return true;
+
             }
             return false;
         }
@@ -104,13 +104,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         toolbar = findViewById(R.id.toolbar);
+        fee_card = findViewById(R.id.fees_card);
+        results_card = findViewById(R.id.results_card);
+        calender_card = findViewById(R.id.calender_card);
+        assignment_card = findViewById(R.id.assignment_card);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 
         bottomNavigationView.setSelectedItemId(R.id.navigationHome);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.clientlabs.smis.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarHome.toolbar);
 
@@ -131,6 +135,14 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_home)
                 .setDrawerLayout(drawer)
                 .build();
+        fee_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent fee_page = new Intent(MainActivity.this, Fees.class);
+                startActivity(fee_page);
+                Animatoo.animateSlideLeft(MainActivity.this);
+            }
+        });
 
         toolbar.inflateMenu(R.menu.tool);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -138,11 +150,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.nav_fees) {
 
-//                    Intent fees_int = new Intent(MainActivity.this, Fees.class);
-//                    login.putExtra("role", "DriverInfo");
-//                    startActivity(fees_int);
-//                    Animatoo.animateSlideUp(Fees.this);
-//                    drawer.closeDrawer(Gravity.RIGHT);
+                    Intent fee_page = new Intent(MainActivity.this, Fees.class);
+                    startActivity(fee_page);
+                    Animatoo.animateSlideLeft(MainActivity.this);
                 }
                 return false;
             }

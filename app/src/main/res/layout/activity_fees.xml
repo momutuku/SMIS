@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Fees">
+
+    <RelativeLayout
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/balance_card"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/edged_blue"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:id="@+id/top_left"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo"
+                    android:text="Balance"
+                    android:textColor="@color/white"
+                    android:textFontWeight="9000"
+                    android:textSize="34dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/date_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Today, 03 Dec 2021"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+
+
+
+            </LinearLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/login_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                app:passwordToggleEnabled="true">
+
+
+                <!--this is the actual edit text which takes the input-->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/balance_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:fontFamily="@font/baloo"
+                    android:text="Kshs. 10,000/-"
+                    android:textColor="@color/white"
+                    android:textFontWeight="9000"
+                    android:textSize="24dp"
+                    android:textStyle="bold"  />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pay_button"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/balance_card"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-20dp"
+            android:background="@drawable/edged_blue"
+            android:text="Proceed to Pay"
+            android:textFontWeight="900" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/banner">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/edged_blue_list">
+
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/payment_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Second Term"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/payment_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="11th June, 2021"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/payment_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:text="Kshs. 21,000/-"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
